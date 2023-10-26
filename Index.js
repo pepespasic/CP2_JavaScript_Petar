@@ -1,5 +1,5 @@
 /**
- * Name: _your name here_
+ * Name: Petar Spasic
  * Date: _add date here_
  *
  * -- your description of what this file does here --
@@ -18,30 +18,50 @@
    window.addEventListener("load", init);
 
    /**
-   * CHANGE: Describe what your init function does here.
+   * Calls the addEntry method 
    */
    function init() {
      // THIS IS THE CODE THAT WILL BE EXECUTED ONCE THE WEBPAGE LOADS
+     qs("button").addEventListener("click", addEntry);
    }
 
    /**
    * Make sure to always add a descriptive comment above
    * every function detailing what it's purpose is
-   * Use JSDoc format with @param and @return.
+   * 
    */
-   function exampleFunction1() {
-     /* SOME CODE */
-   }
+   function addEntry() {
+    let name = id("name").value;
+    let text_entry = id("text_entry").value;
+    let post = document.createElement("article");
+    post.classList.add("post");
+    let heading = document.createElement("h4");
+    heading.textContent = "name " + name;
+    let paragraph = document.createElement("p");
+    paragraph.textContent = "text_entry: " + text_entry;
+    post.appendChild(heading);
+    post.appendChild(paragraph);
+    id("posts").appendChild(post);
+    id("name").value = "";
+    id("text_entry").value = "";
+  }
 
    /**
-   * Make sure to always add a descriptive comment above
-   * every function detailing what it's purpose is
-   * @param {variabletype} someVariable This is a description of someVariable, including, perhaps, preconditions.
-   * @returns {returntype} A description of what this function is actually returning
+   * Checks to see if parameter is of type String and 
+   * gets the average length of strings in the list.
+   * @param {variabletype} tag Pass selector name as parameter and check if it is of type String
+   * @returns {returntype} Returns average length of all string elements
    */
-   function exampleFunction2(someVariable) {
-     /* SOME CODE */
-     return something;
+   function avgLength(tag) {
+     if (typeof(tag) != "string") {
+        console.log("Invalid selector type please try again");
+     }
+     let list = document.querySelectorAll(tag)
+     sum = 0.0;
+     for (i = 0; i < list.length; i++) {
+      sum += list[i].textContent.length;
+     }
+     return sum/list.length;
    }
 
    /** ------------------------------ Helper Functions  ------------------------------ */
