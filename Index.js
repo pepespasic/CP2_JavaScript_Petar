@@ -1,33 +1,26 @@
 /**
  * Name: Petar Spasic
- * Date: _add date here_
+ * Date: 10/25/2023
  *
- * -- your description of what this file does here --
- * Do not keep comments from this template in any work you submit (functions included under "Helper
- * functions" are an exception, you may keep the function names/comments of id/qs/qsa/gen)
+ * Here my JavaScript file that takes user input and display after user has clicked the button. 
+ * It calculates the average length of strings. 
  */
 "use strict";
 
 (function() {
 
-   // MODULE GLOBAL VARIABLES, CONSTANTS, AND HELPER FUNCTIONS CAN BE PLACED HERE
-
-   /**
-   * Add a function that will be called when the window is loaded.
-   */
    window.addEventListener("load", init);
 
    /**
    * Calls the addEntry method after the user clicks the button
    */
    function init() {
-     // THIS IS THE CODE THAT WILL BE EXECUTED ONCE THE WEBPAGE LOADS
      qs("button").addEventListener("click", addEntry);
    }
 
    /**
-   * Prompts the user to enter name and text entry
-   * 
+   * Prompts the user to enter name and text entry and displays it after  
+   * user clicks add entry button. 
    */
    function addEntry() {
     let name = id("name").value;
@@ -35,7 +28,7 @@
     let post = document.createElement("article");
     post.classList.add("post");
     let heading = document.createElement("h4");
-    heading.textContent = "name " + name;
+    heading.textContent = "name: " + name;
     let paragraph = document.createElement("p");
     paragraph.textContent = "text_entry: " + text_entry;
     post.appendChild(heading);
@@ -55,12 +48,14 @@
      if (typeof(tag) != "string") {
         console.log("Invalid selector type please try again");
      }
-     let list = qsa(tag)
-     sum = 0.0;
-     for (i = 0; i < list.length; i++) {
-      sum += list[i].textContent.length;
+     else {
+      let list = qsa(tag)
+      sum = 0.0;
+      for (i = 0; i < list.length; i++) {
+        sum += list[i].textContent.length;
+      }
+      return sum/list.length;
      }
-     return sum/list.length;
    }
 
    /** ------------------------------ Helper Functions  ------------------------------ */
