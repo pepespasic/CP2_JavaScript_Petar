@@ -1,20 +1,53 @@
 /*
   Name: Petar Spasic
-  Date: 10/13/2023
-  Here is my CSS file. I added 4 more rule sets to style my html files.
+  Date: 10/25/2023
+  Here is my CSS file. Here are my rule sets to style my html files.
 */
 
 /*
   Note: This body rule set is to get you started
 */
+
 body {
-    background-color: rgb(137, 182, 154);
-    font-family: "Helvetica", sans-serif;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-  }
-  
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+input {
+  width: 40%;
+  height: 35px;
+  border: 3px black solid;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+textarea {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 100px;
+  border: 3px black solid;
+}
+
+#info {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  float: left;
+  width: 100px;
+}
+
+#posts {
+  border: 3px black solid;
+  padding: 10px;
+  margin-top: 15px;
+}
+
+.post {
+  border: 1.5px blue solid;
+  margin-bottom: 8px;
+}
   .chess ul{
     font-size: 11pt;
     border-color: white;

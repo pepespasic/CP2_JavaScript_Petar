@@ -18,7 +18,7 @@
    window.addEventListener("load", init);
 
    /**
-   * Calls the addEntry method 
+   * Calls the addEntry method after the user clicks the button
    */
    function init() {
      // THIS IS THE CODE THAT WILL BE EXECUTED ONCE THE WEBPAGE LOADS
@@ -26,8 +26,7 @@
    }
 
    /**
-   * Make sure to always add a descriptive comment above
-   * every function detailing what it's purpose is
+   * Prompts the user to enter name and text entry
    * 
    */
    function addEntry() {
@@ -49,14 +48,14 @@
    /**
    * Checks to see if parameter is of type String and 
    * gets the average length of strings in the list.
-   * @param {variabletype} tag Pass selector name as parameter and check if it is of type String
-   * @returns {returntype} Returns average length of all string elements
+   * @param {String} tag Pass selector name as parameter and check if it is of type String
+   * @returns {double} Returns average length of all string elements
    */
    function avgLength(tag) {
      if (typeof(tag) != "string") {
         console.log("Invalid selector type please try again");
      }
-     let list = document.querySelectorAll(tag)
+     let list = qsa(tag)
      sum = 0.0;
      for (i = 0; i < list.length; i++) {
       sum += list[i].textContent.length;
